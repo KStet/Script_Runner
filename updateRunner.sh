@@ -6,7 +6,7 @@ arg1=$1
 
 if [ $(dpkg -l | grep -c nmap) = 0 ]
 then
-        sudo apt-get install -q nmap &>/dev/null
+        sudo apt-get install -qy nmap &>/dev/null
 fi
 
 if [ $(echo $arg1) ]
