@@ -15,7 +15,7 @@ then
 else
 	myip=$(ip a | grep 'inet ' | tr -s ' ' | cut -d ' ' -f3 | cut -d '/' -f1 | grep -v '127.0.0.1')
 	ip=$(echo $myip | cut -d '.' -f1-3)
-	array=( $(nmap -p 22 -T4 --open $ip.1-250 | grep -o $ip.[0-9]* | grep -v $myip
+	array=( $(nmap -p 22 -T4 --open $ip.1-250 | grep -o $ip.[0-9]* | grep -v $myip))
 	$array>IP_arrays.txt
 fi
 
